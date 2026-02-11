@@ -1,11 +1,131 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
 <head>
-<title>Kusum Heritage</title>
-<link rel='stylesheet' href='css/style.css'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kusum Heritage - Premium Saree Collection</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/luxury.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-<h1>Welcome to Kusum Heritage</h1>
-<script src='js/main.js'></script>
+    <!-- Header -->
+    <header class="luxury-header">
+        <div class="logo">
+            <img src="images/logo.png" alt="Kusum Heritage Logo">
+        </div>
+        <nav class="luxury-nav">
+            <ul>
+                <li><a class="nav-link active" href="#home">Home</a></li>
+                <li><a class="nav-link" href="#collections">Collections</a></li>
+                <li><a class="nav-link" href="#about">About</a></li>
+                <li><a class="nav-link" href="#contact">Contact</a></li>
+                <li><a class="nav-link" href="#" onclick="openCart()">
+                    <i class="fas fa-shopping-bag"></i> Cart (<span class="cart-count">0</span>)
+                </a></li>
+            </ul>
+        </nav>
+        <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-text">
+            <h1>Welcome to Kusum Heritage</h1>
+            <p>Premium handwoven sarees crafted by master artisans</p>
+            <a href="#collections" class="btn">Explore Collections</a>
+        </div>
+    </section>
+
+    <!-- Collections Section -->
+    <section id="collections" class="collections-section">
+        <h2>Our Collections</h2>
+        <div class="collection-grid">
+            <div class="collection-card">
+                <img src="images/collections/banarasi.jpg" alt="Banarasi">
+                <h3>Banarasi Silk</h3>
+            </div>
+            <div class="collection-card">
+                <img src="images/collections/kanchipuram.jpg" alt="Kanchipuram">
+                <h3>Kanchipuram Silk</h3>
+            </div>
+            <div class="collection-card">
+                <img src="images/collections/contemporary.jpg" alt="Contemporary">
+                <h3>Contemporary Styles</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section id="products" class="products-section">
+        <h2>Featured Sarees</h2>
+        <div class="product-grid">
+            <div class="luxury-product-card" data-category="banarasi">
+                <img src="images/sarees/saree1.jpg" alt="Royal Banarasi Silk">
+                <h3>Royal Banarasi Silk</h3>
+                <p>₹34,999</p>
+                <div class="product-actions">
+                    <button onclick="openQuickView(1)">Quick View</button>
+                    <button onclick="addToLuxuryCart('Royal Banarasi Silk', 34999, 1)">Add to Cart</button>
+                </div>
+            </div>
+            <div class="luxury-product-card" data-category="kanchipuram">
+                <img src="images/sarees/saree2.jpg" alt="Elegant Kanchipuram">
+                <h3>Elegant Kanchipuram</h3>
+                <p>₹29,999</p>
+                <div class="product-actions">
+                    <button onclick="openQuickView(2)">Quick View</button>
+                    <button onclick="addToLuxuryCart('Elegant Kanchipuram', 29999, 2)">Add to Cart</button>
+                </div>
+            </div>
+            <div class="luxury-product-card" data-category="contemporary">
+                <img src="images/sarees/saree3.jpg" alt="Contemporary Designer">
+                <h3>Contemporary Designer</h3>
+                <p>₹24,999</p>
+                <div class="product-actions">
+                    <button onclick="openQuickView(3)">Quick View</button>
+                    <button onclick="addToLuxuryCart('Contemporary Designer', 24999, 3)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <h2>About Kusum Heritage</h2>
+        <p>We celebrate Indian handloom heritage, connecting you with master artisans and exquisite craftsmanship.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        <p>WhatsApp: <a href="https://wa.me/919784620776">+91 97846 20776</a></p>
+        <p>Email: contact@kusumheritage.com</p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="luxury-footer">
+        <p>&copy; 2026 Kusum Heritage. All rights reserved.</p>
+    </footer>
+
+    <!-- Quick View Modal -->
+    <div id="quickViewModal" class="modal-overlay">
+        <div class="quick-view-content">
+            <span class="close" onclick="closeQuickView()">&times;</span>
+            <!-- Product details loaded via JS -->
+        </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div id="cartSidebar" class="cart-sidebar">
+        <span class="close" onclick="closeCart()">&times;</span>
+        <h3>Your Cart</h3>
+        <div class="cart-items"></div>
+        <button onclick="orderViaWhatsApp()">Order via WhatsApp</button>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
 </body>
 </html>
